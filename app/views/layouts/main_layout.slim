@@ -1,0 +1,20 @@
+doctype 5
+html lang='en'
+  head
+    meta content='text/html; charset=utf-8' http-equiv='Content-Type'
+    meta name='viewport' content='width=device-width,initial-scale=1'
+    title = @title.present? ? "#{@title} | Status Collector" : "Status Collector"
+    = favicon_tag 'favicon.ico'
+    = stylesheet_link_tag '/bootstrap/css/bootstrap.min', 'application'
+
+
+  body
+    div class='navbar navbar-fixed-top'
+      div class='navbar-inner'
+        div class='container'
+          p = yield
+          p foo bar
+
+    =javascript_include_tag 'jquery.min', 'underscore-min', 'backbone-min', '/bootstrap/js/bootstrap.min', 'models', 'collections', 'views'
+
+

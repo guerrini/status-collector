@@ -4,6 +4,7 @@ module StatusCollector
     register Padrino::Helpers
 
     enable :sessions
+    layout :main_layout
 
     ##
     # Caching support.
@@ -38,7 +39,7 @@ module StatusCollector
     # set :locale_path, 'bar'       # Set path for I18n translations (default your_apps_root_path/locale)
     # disable :sessions             # Disabled sessions by default (enable if needed)
     # disable :flash                # Disables sinatra-flash (enabled by default if Sinatra::Flash is defined)
-    # layout  :my_layout            # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
+    layout  :main_layout            # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
     #
 
     ##
@@ -61,5 +62,11 @@ module StatusCollector
     #     render 'errors/500'
     #   end
     #
+
+    get '/' do
+        render :slim, "Hello World"
+    end
+
+
   end
 end

@@ -14,14 +14,14 @@
       return StatusReport.__super__.constructor.apply(this, arguments);
     }
 
-    StatusReport.prototype.model = app.StatusPost;
+    StatusReport.prototype.model = app.models.StatusPost;
 
-    StatusReport.prototype.url = 'api/reports';
+    StatusReport.prototype.url = '/status_posts';
 
     return StatusReport;
 
   })(Backbone.Collection);
 
-  this.app.StatusReport = new StatusReport;
+  this.app.statusReport = new StatusReport;
 
 }).call(this);

@@ -2,8 +2,14 @@ module StatusCollector
   class App < Padrino::Application
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Admin::AccessControl
+
 
     enable :sessions
+    # set :protection, :except => :path_traversal
+    # set :protect_from_csrf, false
+    # disable :protect_from_csrf
+
     layout :main_layout
 
     ##
@@ -41,6 +47,10 @@ module StatusCollector
     # disable :flash                # Disables sinatra-flash (enabled by default if Sinatra::Flash is defined)
     layout  :main_layout            # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
     #
+    access_control.roles_for :any do |role|
+      role.allow '/'
+      role.allow '/status_posts'
+    end
 
     ##
     # You can configure for a specified environment like:

@@ -1,7 +1,7 @@
 @app = window.app ? {}
 
 class StatusReport extends Backbone.Collection
-	model: app.StatusPost
-	url:   'api/reports'
+	model: app.models.StatusPost
+	url:   '/status_posts'
 
-@app.StatusReport = new StatusReport
+@app.statusReport = new StatusReport

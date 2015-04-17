@@ -22,7 +22,8 @@ StatusCollector::App.controllers :status_posts do
   #   'Hello world!'
   # end
   
-
+  # mapping is always /status_posts for restful interface
+  
   get :index, :with => :id, :provides => [:json] do
     puts "====== id version ====="
     @post = StatusPost.get(params[:id])

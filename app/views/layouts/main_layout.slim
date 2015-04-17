@@ -13,6 +13,10 @@ html lang='en'
     script type='text/template' id='report-post-tmpl'
       p <%= content %>
 
+    script type='text/template' id='report-post-form-tmpl'
+      form 
+
+
     div class='navbar navbar-fixed-top'
       div class='navbar-inner'
         div class='container'
@@ -21,6 +25,8 @@ html lang='en'
           h2 Status Report
 
           div id='status-report'
+
+
 
     =javascript_include_tag 'jquery.min', 'underscore-min', 'backbone-min', '/bootstrap/js/bootstrap.min', 'models', 'collections', 'views'
 

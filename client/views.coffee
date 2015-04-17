@@ -6,8 +6,8 @@ class StatusReportView extends Backbone.View
 	initialize: ->
 		console.log '==== Initializing report view!'
 		# events: 'sync reset change': 'render'
-		@listenTo(@collection, 'sync', @render, @)
-		# @collection.bind 'reset', @render, @
+		# @listenTo(@collection, 'sync', @render, @)
+		@collection.bind 'sync', @render, @
 		@collection.fetch()
 		console.log 'report:', @collection
 	render: ->

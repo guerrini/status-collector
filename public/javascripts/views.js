@@ -21,7 +21,7 @@
 
     StatusReportView.prototype.initialize = function() {
       console.log('==== Initializing report view!');
-      this.listenTo(this.collection, 'sync', this.render, this);
+      this.collection.bind('sync', this.render, this);
       this.collection.fetch();
       return console.log('report:', this.collection);
     };

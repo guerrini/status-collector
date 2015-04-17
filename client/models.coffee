@@ -18,6 +18,30 @@ class StatusPost extends Backbone.Model
 @app.models.StatusPost = StatusPost
 
 
+class Projects extends Backbone.Model
+	urlRoot: '/projects'
+	defaults:
+		id: null
+		category_id: null
+		name: ''
+		description: ''
+
+@app.models.Projects = Projects
+
+
+
+class Category extends Backbone.Model
+	urlRoot: '/categories'
+	defaults:
+		id: null
+		name: ''
+		description: ''
+
+@app.models.Category = Category
+
+
+
+
 # $('body').bind('ajaxSend', (elm,xhr,s) ->
 # 	if(s.type=='POST' || s.type=='PUT' || s.type=='DELETE')
 # 		xhr.setRequestHeader('HTTP_X_CSRF_TOKEN',csrf_token)
